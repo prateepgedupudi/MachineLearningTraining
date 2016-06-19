@@ -1,8 +1,14 @@
+import random
 class ScrappyKNN():
     def fit(self, X_train, y_train):
-        pass
+        self.X_train = X_train
+        self.y_train = y_train
     def predict(self, X_test):
-        pass
+        predictions = []
+        for row in X_test:
+            label = random.choice(self.y_train)
+            predictions.append(label)
+        return predictions
 
 # import a data set
 from sklearn import datasets
